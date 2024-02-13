@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: service-b-ingress
+spec:
+  rules:
+  - host: 5a233b44321142b9bf6d.eastus.aksapp.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: service-b
+            port:
+              number: 80
