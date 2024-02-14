@@ -9,5 +9,5 @@ This project sets up a microservices architecture on Azure Kubernetes Service (A
 
 You can see ![Service B](https://i.ibb.co/VBQwpG3/Service-B.png?raw=true "Title")
 
-### Architecture in the image above
+### Architecture in the image 
 ![Service B](https://i.ibb.co/XF7v6G1/architecture.jpg?raw=true "Title")
