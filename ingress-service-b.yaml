@@ -2,15 +2,19 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: service-b-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+
 spec:
+  ingressClassName: nginx
   rules:
-  - host: 5a233b44321142b9bf6d.eastus.aksapp.io
-    http:
+  - http:
       paths:
-      - path: /
-        pathType: Prefix
+      - path: /?(.*)
+        pathType: ImplementationSpecific
         backend:
           service:
             name: service-b
             port:
-              number: 80
+              number: 8000
